@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosper Ossaiku | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#1e40af',
+                        dark: '#1e293b',
+                        light: '#f8fafc',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .text-gradient {
+            background: linear-gradient(90deg, #3b82f6, #60a5fa);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .active-nav::after {
+            width: 100%;
+        }
+        
+        .hero-pattern {
+            background-image: radial-gradient(circle, rgba(59,130,246,0.2) 1px, transparent 1px);
+            background-size: 25px 25px;
+        }
+    </style>
+</head>
+<body class="bg-light text-dark">
+    <nav class="fixed w-full bg-white/80 backdrop-blur-sm shadow-sm z-50 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="text-xl font-bold text-primary">Prosper<span class="text-secondary">Ossaiku</span></a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="nav-link text-dark font-medium hover:text-primary active-nav">Home</a>
+                    <a href="#about" class="nav-link text-dark font-medium hover:text-primary">About</a>
+                    <a href="#skills" class="nav-link text-dark font-medium hover:text-primary">Skills</a>
+                    <a href="#projects" class="nav-link text-dark font-medium hover:text-primary">Projects</a>
+                    <a href="#contact" class="nav-link text-dark font-medium hover:text-primary">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-dark hover:text-primary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg rounded-b-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
+                <a href="#home" class="nav-link px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-blue-50">Home</a>
+                <a href="#about" class="nav-link px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-blue-50">About</a>
+                <a href="#skills" class="nav-link px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-blue-50">Skills</a>
+                <a href="#projects" class="nav-link px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-blue-50">Projects</a>
+                <a href="#contact" class="nav-link px-3 py-2 rounded-md text-base font-medium text-dark hover:text-primary hover:bg-blue-50">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-pattern min-h-screen flex items-center pt-16">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+                <div class="md:w-1/2 space-y-6">
+                    <p class="text-primary font-semibold">Hello, I'm</p>
+                    <h1 class="text-4xl md:text-6xl font-bold">Prosper <span class="text-gradient">Ossaiku</span></h1>
+                    <h2 class="text-2xl md:text-3xl font-medium text-gray-600">Creative <span class="text-primary">Developer</span> & <span class="text-secondary">Designer</span></h2>
+                    <p class="text-gray-600 text-lg">
+                        I craft digital experiences that are beautiful, functional, and user-focused. Let's bring your ideas to life!
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#contact" class="bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                            Contact Me
+                        </a>
+                        <a href="#projects" class="border-2 border-primary hover:border-secondary text-primary hover:text-secondary font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105">
+                            View Work
+                        </a>
+                    </div>
+                    <div class="flex space-x-4 pt-4">
+                        <a href="#" class="text-dark hover:text-primary transition duration-300">
+                            <i class="fab fa-github fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-dark hover:text-primary transition duration-300">
+                            <i class="fab fa-linkedin fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-dark hover:text-primary transition duration-300">
+                            <i class="fab fa-twitter fa-lg"></i>
+                        </a>
+                        <a href="#" class="text-dark hover:text-primary transition duration-300">
+                            <i class="fab fa-dribbble fa-lg"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="w-full h-96 bg-gradient-to-br from-primary to-secondary rounded-2xl shadow-xl overflow-hidden relative">
+                        <div class="h-full w-full flex items-center justify-center">
+                            <img src="prosper.jpg" 
+                                 alt="Prosper Ossaiku" class="object-cover h-full w-full" id="profile-image">
+                        </div>
+                        <div class="absolute -bottom-8 -left-8 w-32 h-32 bg-blue-100 rounded-full opacity-20"></div>
+                        <div class="absolute -top-8 -right-8 w-40 h-40 bg-blue-200 rounded-full opacity-20"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 relative inline-block">
+                    <span class="relative z-10">About <span class="text-primary">Me</span></span>
+                    <span class="absolute bottom-0 left-0 w-full h-2 bg-blue-100 z-0 opacity-50"></span>
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Get to know me better</p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/3">
+                    <div class="relative">
+                        <div class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl">
+                            <img src="prosper.jpg" 
+                                 alt="Prosper Ossaiku" class="w-full h-full object-cover">
+                        </div>
+                        <div class="absolute -bottom-5 -right-5 bg-white p-4 rounded-lg shadow-lg">
+                            <div class="text-primary font-bold text-2xl">5+</div>
+                            <div class="text-gray-600 text-sm">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-2/3">
+                    <h3 class="text-2xl font-bold mb-4">Who Am I?</h3>
+                    <p class="text-gray-600 mb-6">
+                        I'm Prosper Ossaiku, a passionate full-stack developer and UX designer with over 5 years of experience creating digital products that users love. I specialize in building responsive web applications with intuitive interfaces and robust backends.
+                    </p>
+                    <p class="text-gray-600 mb-6">
+                        My journey in tech began when I was 15, coding simple HTML pages. Since then, I've worked with startups and established companies to develop solutions that solve real problems. I believe in the power of technology to transform lives and businesses.
+                    </p>
+                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-map-marker-alt text-primary"></i>
+                            <span class="text-gray-600">Lagos, Nigeria</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-envelope text-primary"></i>
+                            <span class="text-gray-600">hello@prosper.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-phone text-primary"></i>
+                            <span class="text-gray-600">+234 812 3456 789</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-birthday-cake text-primary"></i>
+                            <span class="text-gray-600">May 15, 1995</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i class="fas fa-graduation-cap text-primary"></i>
+                            <span class="text-gray-600">B.Sc Computer Science</span>
+                        </div>
+                    </div>
+                    <a href="#" class="inline-flex items-center text-primary font-semibold group">
+                        Download CV
+                        <i class="fas fa-arrow-down ml-2 group-hover:translate-y-1 transition-transform duration-300"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">My <span class="text-primary">Skills</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Technologies I've mastered</p>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fab fa-html5"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">HTML5</h3>
+                    <p class="text-gray-600 text-sm">Semantic markup with accessibility in mind</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">95%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fab fa-css3-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">CSS3</h3>
+                    <p class="text-gray-600 text-sm">Modern styling with animations and transitions</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">90%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fab fa-js"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">JavaScript</h3>
+                    <p class="text-gray-600 text-sm">Interactive and dynamic web applications</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">85%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">React</h3>
+                    <p class="text-gray-600 text-sm">Component-based UI development</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">80%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fab fa-node"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Node.js</h3>
+                    <p class="text-gray-600 text-sm">Backend services and APIs</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">75%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">MongoDB</h3>
+                    <p class="text-gray-600 text-sm">NoSQL database solutions</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 70%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">70%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">UI/UX Design</h3>
+                    <p class="text-gray-600 text-sm">User-centered interfaces</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">85%</div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="text-primary text-4xl mb-4">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Responsive Design</h3>
+                    <p class="text-gray-600 text-sm">Mobile-first approach</p>
+                    <div class="mt-4">
+                        <div class="w-full bg-gray-200 rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                        <div class="text-right text-xs text-gray-500 mt-1">95%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured <span class="text-primary">Projects</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">A selection of my best work</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" 
+                             alt="E-commerce Platform" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold">E-commerce Platform</h3>
+                            <p class="text-blue-200">React, Node.js, MongoDB</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            A full-featured e-commerce platform with product catalog, cart functionality, user authentication, and payment processing.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1526&q=80" 
+                             alt="Analytics Dashboard" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold">Analytics Dashboard</h3>
+                            <p class="text-blue-200">React, D3.js, Firebase</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            A real-time data visualization dashboard that displays complex analytics in an intuitive and interactive interface.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                             alt="Mobile Banking App" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold">Mobile Banking App</h3>
+                            <p class="text-blue-200">React Native, Node.js, PostgreSQL</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            A secure mobile banking application with biometric authentication, transaction history, and bill payment features.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl shadow-xl overflow-hidden card-hover transition duration-300 group">
+                    <div class="relative overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80" 
+                             alt="Task Management System" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div class="absolute bottom-4 left-4">
+                            <h3 class="text-white text-2xl font-bold">Task Management System</h3>
+                            <p class="text-blue-200">Vue.js, Laravel, MySQL</p>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-gray-600 mb-4">
+                            A collaborative task management tool with kanban boards, team collaboration features, and progress tracking.
+                        </p>
+                        <div class="flex space-x-3">
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="text-primary hover:text-secondary transition duration-300">
+                                <i class="fab fa-github"></i> View Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <a href="#" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-primary hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition duration-300">
+                    View All Projects
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">What <span class="text-primary">Clients</span> Say</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Feedback from people I've worked with</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Prosper delivered our project ahead of schedule and exceeded our expectations. His attention to detail and problem-solving skills are exceptional."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah Johnson</h4>
+                            <p class="text-gray-500 text-sm">CEO, TechStart Inc.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Working with Prosper was a game-changer for our business. He understood our vision and translated it into a beautiful, functional product."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael Chen</h4>
+                            <p class="text-gray-500 text-sm">CTO, Digital Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover transition duration-300">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 flex">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6 italic">
+                        "Prosper is not just a developer, but a strategic partner. His technical expertise and creative approach helped us stand out in a competitive market."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 rounded-full overflow-hidden mr-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Amina Okafor" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Amina Okafor</h4>
+                            <p class="text-gray-500 text-sm">Product Manager, FinTech Co.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Get In <span class="text-primary">Touch</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Let's collaborate on your next project</p>
+            </div>
+            <div class="flex flex-col md:flex-row gap-12">
+                <div class="md:w-1/2">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                            <input type="text" id="name" name="name" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" 
+                                   placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                            <input type="email" id="email" name="email" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" 
+                                   placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+                            <input type="text" id="subject" name="subject" required 
+                                   class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" 
+                                   placeholder="What's this about?">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary transition duration-300" 
+                                      placeholder="Tell me about your project"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" 
+                                    class="w-full bg-primary hover:bg-secondary text-white font-medium py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-xl h-full">
+                        <h3 class="text-xl font-bold mb-6 text-dark">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-primary rounded-lg p-3">
+                                    <i class="fas fa-map-marker-alt text-white text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-dark">Address</h4>
+                                    <p class="text-gray-600 mt-1">Lekki, Nigeria</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-primary rounded-lg p-3">
+                                    <i class="fas fa-envelope text-white text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-dark">Email</h4>
+                                    <p class="text-gray-600 mt-1">hello@prosper.com</p>
+                                    <p class="text-gray-600">work@prosper.com</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 bg-primary rounded-lg p-3">
+                                    <i class="fas fa-phone-alt text-white text-lg"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-base font-medium text-dark">Phone</h4>
+                                    <p class="text-gray-600 mt-1">+234 812 3456 789</p>
+                                    <p class="text-gray-600">+234 809 8765 432</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <h3 class="text-xl font-bold mb-4 text-dark">Follow Me</h3>
+                            <div class="flex space-x-4">
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-twitter"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-dribbble"></i>
+                                </a>
+                                <a href="#" class="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-gray-700 hover:bg-primary hover:text-white transition duration-300">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-primary">Prosper<span class="text-white">Ossaiku</span></a>
+                    <p class="text-gray-400 mt-2">Crafting digital experiences that matter</p>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+                    <a href="#home" class="text-gray-400 hover:text-white transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-400 hover:text-white transition duration-300">About</a>
+                    <a href="#skills" class="text-gray-400 hover:text-white transition duration-300">Skills</a>
+                    <a href="#projects" class="text-gray-400 hover:text-white transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contact</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm mb-4 md:mb-0">© 2023 Prosper Ossaiku. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <span class="sr-only">Privacy Policy</span>
+                        Privacy
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <span class="sr-only">Terms of Service</span>
+                        Terms
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300">
+                        <span class="sr-only">Cookie Policy</span>
+                        Cookies
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white p-3 rounded-full shadow-lg opacity-0 invisible transition-all duration-300 transform translate-y-4 hover:bg-secondary">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                
+                if (pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active-nav');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active-nav');
+                }
+            });
+            
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.add('opacity-100', 'visible', 'translate-y-0');
+            } else {
+                backToTopButton.classList.add('opacity-0', 'invisible', 'translate-y-4');
+                backToTopButton.classList.remove('opacity-100', 'visible', 'translate-y-0');
+            }
+        });
+        
+        document.getElementById('back-to-top').addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.card-hover, .text-gradient, [id^="project"]');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+        
+        document.querySelectorAll('.card-hover, .text-gradient, [id^="project"]').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
